@@ -31,7 +31,7 @@ app.get("/api/:date?", function (req, res) {
 
   if (!date) {
     parsedDate = new Date();
-  } else if (!isNaN(date)) {
+  } else if (/^\d+$/.test(date)) {
     parsedDate = new Date(parseInt(date));
   } else {
     parsedDate = new Date(date);
